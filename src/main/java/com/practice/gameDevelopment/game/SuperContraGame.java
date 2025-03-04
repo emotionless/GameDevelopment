@@ -1,24 +1,24 @@
 package com.practice.gameDevelopment.game;
 
-public class MarioGame implements MyGame {
+public class SuperContraGame implements MyGame {
 
     @Override
     public void up() {
-        System.out.println("Jump");
+        System.out.println("Up");
     }
 
     @Override
     public void down() {
-        System.out.println("Put in a hole");
+        System.out.println("Sit down");
     }
 
     @Override
     public void left() {
-        System.out.println("Back");
+        System.out.println("Go back");
     }
 
     @Override
     public void right() {
-        System.out.println("Accelerate");
+        System.out.println("Shoot a bullet");
     }
 }
