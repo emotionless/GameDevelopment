@@ -2,15 +2,18 @@ package com.practice.gameDevelopment;
 
 import com.practice.gameDevelopment.game.GameRunner;
 import com.practice.gameDevelopment.game.MarioGame;
+import com.practice.gameDevelopment.game.SuperContraGame;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 public class GameDevelopmentApplication {
 
 	public static void main(String[] args) {
-		var marioGame = new MarioGame();
-		var gameRunner = new GameRunner(marioGame);
+		// var game = new MarioGame();
+		var game = new SuperContraGame();
+		var gameRunner = new GameRunner(game);
 		gameRunner.run();
+
 	}
 
 }
