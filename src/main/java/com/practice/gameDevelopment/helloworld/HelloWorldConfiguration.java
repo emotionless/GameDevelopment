@@ -1,4 +1,4 @@
-package com.practice.gameDevelopment;
+package com.practice.gameDevelopment.helloworld;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
