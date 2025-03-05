@@ -4,6 +4,8 @@ import com.practice.gameDevelopment.game.GameRunner;
 import com.practice.gameDevelopment.game.PackmanGame;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.Arrays;
+
 public class App02HelloWorld {
 
 	public static void main(String[] args) {
@@ -17,8 +19,17 @@ public class App02HelloWorld {
 		System.out.println(context.getBean("person"));
 		System.out.println(context.getBean("personWithMethod"));
 		System.out.println(context.getBean("personWithParameters"));
+		System.out.println(context.getBean("person3WithParameters"));
+		System.out.println(context.getBean("person4WithQualifier"));
+		System.out.println(context.getBean(Person.class));
 		System.out.println(context.getBean("address2"));
 		System.out.println(context.getBean("address3"));
+		System.out.println(context.getBean(Address.class));
+
+		// prints all beans
+		Arrays.stream(context.getBeanDefinitionNames()).forEach(
+				System.out::println
+		);
 	}
 
 }
