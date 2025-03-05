@@ -1,7 +1,9 @@
 package com.practice.gameDevelopment;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 record Person (String name, int age, Address address) { };
 record Address (String firstLine, String city) {};
@@ -35,12 +37,25 @@ public class HelloWorldConfiguration {
         return new Person(name, age, address3);
     }
 
+    @Bean
+    @Primary
+    public Person person3WithParameters(String name, int age, Address address) {
+        return new Person(name, age, address);
+    }
+
+    @Bean
+    public Person person4WithQualifier(String name, int age, @Qualifier("address2Qualifier") Address address) {
+        return new Person(name, age, address);
+    }
+
     @Bean (name = "address2")
+    @Qualifier("address2Qualifier")
     public Address address() {
         return new Address("610 Granville St, BC, Canada", "Vancouver");
     }
 
     @Bean (name = "address3")
+    @Primary
     public Address address3() {
         return new Address("Haydarabad", "Gazipur");
     }
